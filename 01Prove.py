@@ -6,9 +6,9 @@ Author: Josh Dalton
 def main():
     player = next_player("")
     board = new_board()
-    display_board(board)
-    return 
-    print('test')
+    while not (game_won(board) or cats_game(board)):
+        take_turn(player, board)
+        display_board(board)
 
 def new_board():
     board = []
@@ -25,11 +25,11 @@ def display_board(board):
     print(f"{board[6]}|{board[7]}|{board[8]}")
     print()
 
-def cats_game():
+def cats_game(board):
     return
 
 
-def game_won():
+def game_won(board):
     return
 
 def take_turn(player, board):
@@ -37,6 +37,9 @@ def take_turn(player, board):
     board[square - 1] = player
 
 def next_player(player):
-    return
+    if player == "" or player == "x":
+        return "o"
+    elif player == "o":
+        return "x"
 
 main()
