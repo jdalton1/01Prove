@@ -4,11 +4,15 @@ Author: Josh Dalton
 '''
 
 def main():
-    player = next_player("")
+    player = "x"
     board = new_board()
     while not (game_won(board) or cats_game(board)):
-        take_turn(player, board)
         display_board(board)
+        take_turn(player, board)
+        player = next_player(player)
+    display_board(board)
+    print("Good game. Thanks for playing!")
+        
 
 def new_board():
     board = []
@@ -37,9 +41,10 @@ def take_turn(player, board):
     board[square - 1] = player
 
 def next_player(player):
-    if player == "" or player == "x":
-        return "o"
-    elif player == "o":
+    if player != "x":
         return "x"
+        
+    else:
+        return "o"
 
 main()
