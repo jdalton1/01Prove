@@ -13,7 +13,6 @@ def main():
     display_board(board)
     print("Good game. Thanks for playing!")
         
-
 def new_board():
     board = []
     for square in range(9):
@@ -34,7 +33,6 @@ def cats_game(board):
         if board[square] != "x" or board[square] != "o":
             return False
     return True
-
 
 def game_won(board):
     return
