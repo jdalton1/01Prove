@@ -30,7 +30,10 @@ def display_board(board):
     print()
 
 def cats_game(board):
-    return
+    for square in range(9):
+        if board[square] != "x" or board[square] != "o":
+            return False
+    return True
 
 
 def game_won(board):
@@ -43,7 +46,7 @@ def take_turn(player, board):
 def next_player(player):
     if player != "x":
         return "x"
-        
+
     else:
         return "o"
 
